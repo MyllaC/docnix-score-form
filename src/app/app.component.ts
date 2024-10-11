@@ -10,5 +10,5 @@ import { ClientFormComponent } from './core/client-form.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'docnix-score-form';
+  title = 'score-analysis';
 }

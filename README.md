@@ -1,4 +1,4 @@
-# DocnixScoreForm
+# Score Analysis App
 
 ![alt text](image.png)
 
