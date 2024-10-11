@@ -1,0 +1,41 @@
+<label [for]="id" class="flex flex-col gap-1">
+  <div class="flex justify-between">
+    <span class="text-gray-100 font-sans font-semibold text-sm">{{
+      label
+    }}</span>
+    <span *ngIf="required" class="text-red-400 font-sans font-semibold">*</span>
+  </div>
+  <input
+    [type]="type"
+    [id]="id"
+    [required]="required"
+    [value]="value"
+    (input)="handleInput($event)"
+    [placeholder]="placeholder"
+    class="flex items-center gap-3 h-12 py-4 px-3 rounded bg-gray-800 w-full focus-within:ring-2 ring-cyan-300"
+  />
+
+  <div *ngIf="control && control.invalid && control.touched">
+    <small *ngIf="control.hasError('required')" class="text-xs text-red-400">
+      Campo obrigatório
+    </small>
+    <small *ngIf="control.hasError('email')" class="text-xs text-red-400">
+      Email inválido
+    </small>
+    <small *ngIf="control.hasError('minlength')" class="text-xs text-red-400">
+      Mínimo de {{ control.getError('minlength')?.requiredLength }} caracteres
+    </small>
+    <small *ngIf="control.hasError('maxlength')" class="text-xs text-red-400">
+      Máximo de {{ control.getError('maxlength')?.requiredLength }} caracteres
+    </small>
+    <small *ngIf="control.hasError('pattern')" class="text-xs text-red-400">
+      Formato inválido
+    </small>
+    <small
+      *ngIf="control.hasError('invalidBirthday')"
+      class="text-xs text-red-400"
+    >
+      A data de nascimento não pode ser no futuro
+    </small>
+  </div>
+</label>

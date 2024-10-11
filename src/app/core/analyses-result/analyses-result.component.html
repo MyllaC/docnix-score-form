@@ -1,0 +1,26 @@
+<div class="mt-4">
+  <app-header
+    title="Cadastro Realizado com sucesso!"
+    subtitle="Seu Score é de {{
+      score
+    }} e o resultado da sua análise de crédito é:"
+  ></app-header>
+
+  <div
+    class="flex items-center justify-center px-4 py-8 bg-black rounded-xl my-6"
+  >
+    <h1 class="text-4xl">
+      {{ analysis }}
+    </h1>
+  </div>
+
+  <div>
+    <app-button (click)="navigateToHelpPage()" color="primary">
+      Saiba como melhorar meu Score
+    </app-button>
+
+    <app-button (click)="registerNewUser()" color="secondary">
+      Novo cadastro
+    </app-button>
+  </div>
+</div>

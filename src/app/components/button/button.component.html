@@ -1,0 +1,15 @@
+<button
+  type="button"
+  (click)="onClick()"
+  class="mt-4 py-3 px-4 rounded font-semibold text-sm w-full transition-colors"
+  [ngClass]="{
+    'bg-gray-300 text-gray-600 cursor-not-allowed': disabled,
+    'bg-cyan-500 hover:bg-cyan-300 text-black':
+      color === 'primary' && !disabled,
+    'bg-transparent border hover:border-cyan-300 hover:text-cyan-300 text-cyan-500 border-cyan-500':
+      color === 'secondary' && !disabled
+  }"
+  [disabled]="disabled"
+>
+  <ng-content></ng-content>
+</button>

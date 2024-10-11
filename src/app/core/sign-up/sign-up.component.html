@@ -1,0 +1,102 @@
+<div class="w-[50vw]">
+  <app-header
+    title="Análise de Crédito"
+    subtitle="Cadastre-se e calcule seu Score gratuitamente!"
+  ></app-header>
+
+  <div class="overflow-auto max-h-[60vh] px-3">
+    <form
+      [formGroup]="clientForm"
+      (ngSubmit)="submitForm()"
+      class="flex flex-col gap-4 items-stretch w-full"
+    >
+      <app-input
+        label="Nome"
+        [control]="clientForm.get('name')"
+        [required]="true"
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Ex: Camila Cristina"
+      ></app-input>
+
+      <app-input
+        label="Email"
+        [control]="clientForm.get('email')"
+        [required]="true"
+        type="text"
+        id="email"
+        formControlName="email"
+        placeholder="Ex: camila@email.com"
+      ></app-input>
+
+      <app-input
+        label="CPF"
+        [required]="true"
+        [control]="clientForm.get('cpf')"
+        type="text"
+        id="cpf"
+        formControlName="cpf"
+        placeholder="Ex: 123.456.789-00"
+      ></app-input>
+
+      <app-input
+        label="Data de Nascimento"
+        [control]="clientForm.get('birthday')"
+        [required]="true"
+        type="date"
+        id="birthday"
+        formControlName="birthday"
+        placeholder="Digite sua Data de Nascimento"
+      ></app-input>
+
+      <app-input
+        label="Nome do Titular"
+        [control]="clientForm.get('cardHolderName')"
+        id="cardHolderName"
+        type="text"
+        formControlName="cardHolderName"
+        [required]="true"
+        placeholder="Ex: João da Silva"
+      ></app-input>
+
+      <app-input
+        label="Número do Cartão"
+        [control]="clientForm.get('cardNumber')"
+        id="cardNumber"
+        type="text"
+        formControlName="cardNumber"
+        [required]="true"
+        placeholder="Ex: 1234567890123456"
+      ></app-input>
+
+      <app-input
+        label="Data de Validade"
+        id="expiryDate"
+        type="text"
+        [control]="clientForm.get('expiryDate')"
+        formControlName="expiryDate"
+        [required]="true"
+        placeholder="MM/AA"
+      ></app-input>
+
+      <app-input
+        label="CVV"
+        id="cvv"
+        type="text"
+        formControlName="cvv"
+        [required]="true"
+        placeholder="123"
+      ></app-input>
+
+      <app-button
+        type="submit"
+        (click)="submitForm()"
+        [disabled]="clientForm.invalid"
+        color="primary"
+      >
+        Cadastrar
+      </app-button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div
+  class="w-screen h-screen overflow-auto bg-gray-900 flex flex-col items-center justify-center text-gray-100"
+>
+  <app-sign-up
+    *ngIf="!score"
+    [score]="score"
+    (scoreChange)="updateScore($event)"
+  />
+
+  <app-analyses-result
+    *ngIf="score"
+    [score]="score"
+    [user]="user"
+    (newUser)="registerNewUser()"
+  />
+</div>
